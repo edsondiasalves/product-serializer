@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "Name": "Galaxy S20",
+    "Type": "Smartphone",
+    "SmartphoneDetails": {
+      "SizeScreen": 6,
+      "DiskSpace": 128
+    }
+  },
+  {
+    "Id": 2,
+    "Name": "The Alchemist",
+    "Type": "Book",
+    "BookDetails": {
+      "TotalPages": 230,
+      "Author":  "Coelho, Paulo"
+    }
+  }
+]
