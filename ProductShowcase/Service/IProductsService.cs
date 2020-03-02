@@ -5,6 +5,6 @@ namespace ProductShowcase.Service
 {
     public interface IProductsService
     {
-        IEnumerable<IProduct> GetAllProducts();
+        IEnumerable<IProduct> GetAllProducts(CastingScheme scheme);
     }
 }

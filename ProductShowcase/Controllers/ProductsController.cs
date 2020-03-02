@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using ProductShowcase.Entities;
 using ProductShowcase.Service;
 
 namespace ProductShowcase.Controllers
@@ -16,9 +17,20 @@ namespace ProductShowcase.Controllers
         }
 
         [HttpGet]
-        public ActionResult Get()
+        [Route("sequencial")]
+        public ActionResult GetSequencial()
         {
-            var products = _productsService.GetAllProducts();
+            var products = _productsService.GetAllProducts(CastingScheme.Sequencially);
+            var serialized = JsonConvert.SerializeObject(products);
+
+            return Ok(serialized);
+        }
+
+        [HttpGet]
+        [Route("bychuncks")]
+        public ActionResult GetByChuncks()
+        {
+            var products = _productsService.GetAllProducts(CastingScheme.ByChunks);
             var serialized = JsonConvert.SerializeObject(products);
 
             return Ok(serialized);
